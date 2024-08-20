@@ -10,14 +10,14 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+    screen.fill("black")
 
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
 
-        screen.fill("black")
         pygame.display.flip()
 
         delta = clock.tick(60)
