@@ -11,9 +11,11 @@ def main():
     dt = 0
 
     player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
-    screen.fill("black")
 
     while True:
+        screen.fill("black")
+        player.draw(screen)
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
@@ -23,7 +25,7 @@ def main():
         delta = clock.tick(60)
         dt = delta / 1000
 
-        player.draw(screen)
+        player.update(dt)
 
 
 if __name__ == "__main__":
